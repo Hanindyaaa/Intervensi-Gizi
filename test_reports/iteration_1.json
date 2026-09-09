@@ -1,0 +1,67 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend lane not applicable: the acceptance matrix specifies React session state only and no API/database behavior. The pre-scaffolded backend suite contains no tests (pytest exited 5: no tests ran)."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Beranda membuka alur belajar dan profil hanya meminta nama panggilan/inisial serta kelompok usia",
+      "name": "profile-starts-learning",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Home hero and CTA visible; nickname Aira and age 2–3 tahun accepted; navigated to /belajar with module card visible."
+    },
+    {
+      "criterion": "Navigasi multi-page utama tersedia dan tidak blank",
+      "name": "responsive-navigation-pages",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Mobile menu opened, /belajar rendered with progress and page navigation, and mobile horizontal-overflow assertion passed."
+    },
+    {
+      "criterion": "Menu belajar menampilkan 10 kartu materi dan detail materi interaktif",
+      "name": "learn-material-detail",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "10 module cards counted; material detail rendered with example, accordion details, and completion returned to /belajar."
+    },
+    {
+      "criterion": "Susun Piringku menambah, mengganti, menghapus, mereset, dan mengevaluasi makanan",
+      "name": "plate-build-evaluate",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Empty-plate validation shown; nasi, telur, wortel, pisang selected; evaluation rendered; selected item removed and reset restored empty plate."
+    },
+    {
+      "criterion": "Switch camilan memberi perbandingan positif",
+      "name": "snack-switch-feedback",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Try option displayed positive feedback, next example changed progress, and usual option displayed non-judgmental feedback."
+    },
+    {
+      "criterion": "Kuis memberi feedback langsung dan berpindah sampai selesai",
+      "name": "quiz-completes-with-feedback",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Four choices counted; first answer showed feedback and disabled choice; eight questions advanced to completion card with score."
+    },
+    {
+      "criterion": "Skenario dan checklist higiene interaktif",
+      "name": "scenario-and-hygiene-checklist",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Four scenario choices counted and option 3 produced feedback; five hygiene items counted and checking all displayed completion message."
+    },
+    {
+      "criterion": "Ringkasan, referensi, aksesibilitas dasar, dan responsive layout",
+      "name": "summary-and-references",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Five summary reminders rendered; references page showed three official reference cards and disclaimer text."
+    }
+  ]
+}

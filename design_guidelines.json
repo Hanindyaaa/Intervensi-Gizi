@@ -1,0 +1,277 @@
+{
+  "project_name": "Gizi Balita T - Media Intervensi Edukasi Gizi & Pemberian Makan Balita",
+  "app_type": "mobile_web_app",
+  "theme": "light",
+  "archetype": "Pastel & Soft (Cute, Modern, Educational, Child & Parent Friendly)",
+  "language": "Bahasa Indonesia",
+  "typography": {
+    "heading_font": "Outfit, Nunito, sans-serif",
+    "body_font": "Manrope, Inter, sans-serif",
+    "hierarchy": {
+      "h1_hero": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight",
+      "h2_section": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-800",
+      "h3_card": "text-lg sm:text-xl font-bold text-slate-800",
+      "subtext": "text-sm sm:text-base font-medium text-slate-600 leading-relaxed",
+      "caption_badge": "text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
+    }
+  },
+  "colors": {
+    "palette_family": "Pastel & Soft Educational Palette",
+    "background_main": "#FAFAF7",
+    "surface_card": "#FFFFFF",
+    "surface_secondary": "#F3F4F6",
+    "primary": {
+      "main": "#F472B6",
+      "light": "#FCE7F3",
+      "dark": "#DB2777",
+      "contrastText": "#FFFFFF",
+      "label": "Pastel Pink (Ramah & Hangat)"
+    },
+    "secondary": {
+      "main": "#A78BFA",
+      "light": "#EDE9FE",
+      "dark": "#7C3AED",
+      "contrastText": "#FFFFFF",
+      "label": "Soft Lavender (Edukatif & Modern)"
+    },
+    "accent_yellow": {
+      "main": "#FBBF24",
+      "light": "#FEF3C7",
+      "dark": "#D97706",
+      "contrastText": "#78350F",
+      "label": "Sunny Yellow (Ceria & Positif)"
+    },
+    "accent_blue": {
+      "main": "#38BDF8",
+      "light": "#E0F2FE",
+      "dark": "#0284C7",
+      "contrastText": "#FFFFFF",
+      "label": "Sky Blue (Segar & Terpercaya)"
+    },
+    "accent_green": {
+      "main": "#34D399",
+      "light": "#D1FAE5",
+      "dark": "#059669",
+      "contrastText": "#FFFFFF",
+      "label": "Fresh Mint Green (Sehat & Alami)"
+    },
+    "text": {
+      "primary": "#1E293B",
+      "secondary": "#475569",
+      "muted": "#94A3B8"
+    },
+    "borders": {
+      "subtle": "#E2E8F0",
+      "accent": "#FBCFE8"
+    }
+  },
+  "visual_enhancers": {
+    "card_style": "rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white p-6 transition-all duration-300 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)]",
+    "interactive_button": "rounded-2xl font-bold transition-all duration-200 active:scale-95 shadow-sm hover:shadow-md",
+    "badge_style": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide",
+    "glass_header": "backdrop-blur-md bg-white/85 border-b border-pink-100/60 sticky top-0 z-50",
+    "kawaii_decorations": "Soft pastel floating circles, playful icons, soft gradients on containers (no full dark gradients)"
+  },
+  "routes_and_navigation": {
+    "navigation_structure": "Multi-page client routing using React state or lightweight router with top sticky glass header, breadcrumbs, learning progress indicator bar, and bottom navigation bar on mobile.",
+    "routes": [
+      {
+        "path": "/",
+        "name": "Beranda",
+        "description": "Hero banner dengan salam hangat, statistik singkat pentingnya gizi balita T, CTA Mulai Belajar, dan gambaran modul."
+      },
+      {
+        "path": "/mulai-profil",
+        "name": "Profil Balita",
+        "description": "Input nama panggilan/inisial anak dan kelompok usia (12–23 bulan, 2–3 tahun, 4–5 tahun) dengan opsi 'Lewati'. Bebas simpan data pribadi."
+      },
+      {
+        "path": "/belajar",
+        "name": "Menu Materi",
+        "description": "Daftar 10 kartu materi edukasi gizi & pemberian makan interaktif dengan status progres."
+      },
+      {
+        "path": "/materi/:id",
+        "name": "Detail Materi",
+        "description": "Tampilan visual kaya materi dengan highlight point, accordion tips, contoh makanan lokal, dan tombol lanjut ke materi berikutnya."
+      },
+      {
+        "path": "/piringku",
+        "name": "Simulasi Susun Piringku",
+        "description": "Interaktif piring gizi balita T (sesuai Pedoman Isi Piringku Kemenkes RI). Pengguna memilih makanan pokok, protein hewani, protein nabati, sayur, buah, dan lemak. Memberi evaluasi ramah & saran konkret."
+      },
+      {
+        "path": "/camilan",
+        "name": "Simulasi Switch Camilan",
+        "description": "Perbandingan camilan sehat vs camilan tinggi gula/garam dengan bahasa mengarahkan tanpa menghakimi."
+      },
+      {
+        "path": "/kuis",
+        "name": "Kuis Interaktif",
+        "description": "8-10 soal pilihan ganda dengan pembahasan langsung setelah menjawab dan skor evaluasi pembelajaran."
+      },
+      {
+        "path": "/skenario",
+        "name": "Skenario Orang Tua",
+        "description": "Studi kasus situasi nyata pemberian makan (Anak GTM/Gerakan Tutup Mulut, pilih-pilih makanan, suka jajan) dengan panduan respon positif."
+      },
+      {
+        "path": "/higiene",
+        "name": "Checklist Higiene",
+        "description": "Checklist interaktif kebersihan tangan, keamanan bahan makanan, dan penyajian makanan balita."
+      },
+      {
+        "path": "/ringkasan",
+        "name": "Ringkasan & Aksi",
+        "description": "Rangkuman '5 Hal Penting yang Perlu Diingat' dan rute pilihan untuk mengulang materi atau uji piring lagi."
+      },
+      {
+        "path": "/referensi",
+        "name": "Referensi & Disclaimer",
+        "description": "Daftar rujukan resmi Kemenkes RI, Permenkes AKG, Buku KIA, dan Disclaimer Media Edukasi."
+      }
+    ]
+  },
+  "modules_data": [
+    {
+      "id": 1,
+      "title": "Kebutuhan Gizi Balita T",
+      "category": "Dasar Gizi",
+      "summary": "Memahami mengapa balita membutuhkan gizi seimbang untuk pertumbuhan fisik dan perkembangan otak pesat.",
+      "key_points": [
+        "Usia balita adalah periode emas pertumbuhan (1000 HPK hingga usia pra-sekolah).",
+        "Kebutuhan energi dan protein meningkat seiring bertambahnya aktivitas fisik anak.",
+        "Gizi seimbang mencakup karbohidrat, protein hewani/nabati, lemak sehat, vitamin, mineral, dan air.",
+        "Setiap kelompok usia (12-23 bulan, 2-3 tahun, 4-5 tahun) memiliki porsi dan tekstur yang disesuaikan."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Pedoman Isi Piringku Balita",
+      "category": "Panduan Porsi",
+      "summary": "Mengenal pembagian porsi piring sekali makan sesuai panduan Kemenkes RI.",
+      "key_points": [
+        "50% isi piring diisi oleh Sayur dan Buah-buahan segar.",
+        "50% sisanya diisi oleh Makanan Pokok dan Lauk Pauk (utamakan Protein Hewani).",
+        "Lauk hewani seperti telur, ikan, ayam, dan daging sangat esensial pencegah stunting.",
+        "Sertakan porsi minyak/lemak sehat untuk penyerapan vitamin A, D, E, K."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Protein Hewani Juara Stunting",
+      "category": "Bahan Makanan",
+      "summary": "Pentingnya asam amino lengkap dari telur, ikan lokal, daging, dan hati ayam.",
+      "key_points": [
+        "Protein hewani mengandung asam amino esensial lengkap yang mudah diserap tubuh balita.",
+        "Ikan kembung, lele, telur ayam, dan hati ayam adalah sumber protein terjangkau berkualitas tinggi.",
+        "Usahakan ada minimal 1 jenis protein hewani di setiap kali makan utama.",
+        "Protein nabati (tahu/tempe) menjadi pelengkap kaya serat dan mineral."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Sayur & Buah Kaya Vitamin",
+      "category": "Bahan Makanan",
+      "summary": "Mengenalkan warna-warni sayur dan buah lokal yang disukai anak.",
+      "key_points": [
+        "Sayuran hijau dan oranye (bayam, wortel, labu siam) kaya vitamin A dan zat besi.",
+        "Buah segar (pisang, pepaya, jeruk, mangga) membantu pencernaan dan daya tahan tubuh.",
+        "Kenalkan bentuk potongan yang menarik (finger food) atau dicampur halus jika anak baru belajar tekstur.",
+        "Variasi warna menarik rasa ingin tahu anak untuk mencoba."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Lemak Sehat & Energi",
+      "category": "Bahan Makanan",
+      "summary": "Lemak bukan musuh! Lemak adalah sumber energi tinggi bagi fisik balita yang aktif.",
+      "key_points": [
+        "Balita membutuhkan konsentrasi energi tinggi karena lambungnya masih kecil.",
+        "Gunakan santan, minyak kelapa, mentega/margarin, atau alpukat dalam masakan balita.",
+        "Lemak membantu melarutkan vitamin A, D, E, dan K serta membuat masakan lebih gurih alami.",
+        "Sajikan tumisan ringan atau kuah bersantan yang kaya cita rasa."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Porsi & Frekuensi Makan",
+      "category": "Jadwal & Porsi",
+      "summary": "Aturan jadwal makan utama dan makanan selingan yang teratur.",
+      "key_points": [
+        "3 kali makan utama dan 2 kali camilan bergizi setiap hari.",
+        "Beri jeda 2-3 jam antara makan utama dan selingan agar anak merasakan rasa lapar dan kenyang alami.",
+        "Batasi waktu makan maksimal 30 menit agar anak tidak lelah atau bosan.",
+        "Hindari memberi minum susu atau jus berlebihan tepat sebelum jam makan utama."
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Camilan Bergizi & Segar",
+      "category": "Selingan Sehat",
+      "summary": "Memilih camilan yang padat gizi, bukan sekadar kalori kosong.",
+      "key_points": [
+        "Camilan sehat memberi dorongan energi di antara jam makan utama.",
+        "Pilihan baik: puding susu buah, perkedel tahu daging, pisang bakar keju, atau rebusan ubi.",
+        "Mengarahkan, bukan melarang: ganti jajanan kemasan tinggi sodium/gula dengan camilan olahan rumah sederhana.",
+        "Libatkan anak saat menyiapkan camilan agar mereka antusias."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Perilaku Makan Positif",
+      "category": "Suasana Makan",
+      "summary": "Menciptakan lingkungan makan yang menyenangkan tanpa paksaan.",
+      "key_points": [
+        "Makan bersama keluarga membangun kebiasaan meniru pola makan sehat.",
+        "Matikan gadget dan TV saat makan untuk fokus pada makanan dan interaksi.",
+        "Pahami tanda lapar (gelisah, menunjuk makanan) dan tanda kenyang (memalingkan muka, menutup mulut).",
+        "Jangan memaksakan suapan terakhir jika anak sudah menunjukkan tanda kenyang."
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Higiene & Keamanan Pangan",
+      "category": "Kebersihan",
+      "summary": "Langkah penting mencegah infeksi dan diare pada balita.",
+      "key_points": [
+        "Cuci tangan dengan sabun dan air mengalir sebelum menyiapkan makanan dan sebelum menyuapi anak.",
+        "Pastikan peralatan makan dalam keadaan bersih dan kering.",
+        "Masak bahan makanan (terutama daging, telur, ikan) hingga matang sempurna.",
+        "Simpan makanan matang pada wadah tertutup dan tidak dibiarkan di suhu ruang lebih dari 2 jam."
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Tips Praktis untuk Orang Tua",
+      "category": "Solusi Sehari-hari",
+      "summary": "Menghadapi anak pilih-pilih makanan (picky eater) dan Gerakan Tutup Mulut (GTM).",
+      "key_points": [
+        "Kenalkan makanan baru secara bertahap (perlu 10-15 kali pengenalan sebelum anak mau menerima).",
+        "Sajikan porsi kecil terlebih dahulu agar anak tidak merasa tertekan.",
+        "Ubah bentuk penyajian (misal wortel dipotong bintang atau dibuat sup pastel).",
+        "Tetap tenang dan sabar; orang tua bertugas menyediakan makanan bergizi, anak menentukan berapa banyak yang dimakan."
+      ]
+    }
+  ],
+  "image_urls": {
+    "hero_illustration": "https://images.unsplash.com/photo-1641642400143-6be68f1a0918?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxoZWFsdGh5JTIwdG9kZGxlciUyMGZvb2QlMjBwbGF0ZSUyMGN1dGUlMjBjb2xvcmZ1bCUyMHZlZ2V0YWJsZXMlMjBmcnVpdHxlbnwwfHx8fDE3ODg5NzMyMTh8MA&ixlib=rb-4.1.0&q=85",
+    "healthy_fruits": "https://images.unsplash.com/photo-1684160244466-b89ef03b7638?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHxoZWFsdGh5JTIwdG9kZGxlciUyMGZvb2QlMjBwbGF0ZSUyMGN1dGUlMjBjb2xvcmZ1bCUyMHZlZ2V0YWJsZXMlMjBmcnVpdHxlbnwwfHx8fDE3ODg5NzMyMTh8MA&ixlib=rb-4.1.0&q=85",
+    "veggie_plate": "https://images.unsplash.com/photo-1583507171283-0d663f8416c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHw0fHxoZWFsdGh5JTIwdG9kZGxlciUyMGZvb2QlMjBwbGF0ZSUyMGN1dGUlMjBjb2xvcmZ1bCUyMHZlZ2V0YWJsZXMlMjBmcnVpdHxlbnwwfHx8fDE3ODg5NzMyMTh8MA&ixlib=rb-4.1.0&q=85",
+    "colorful_spread": "https://images.unsplash.com/photo-1535229398509-70179087ac75?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwdG9kZGxlciUyMGZvb2QlMjBwbGF0ZSUyMGN1dGUlMjBjb2xvcmZ1bCUyMHZlZ2V0YWJsZXMlMjBmcnVpdHxlbnwwfHx8fDE3ODg5NzMyMTh8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Pastikan seluruh alur interaktif dibangun menggunakan standar React + Tailwind CSS tanpa error backend.",
+    "Gunakan Local Storage atau Browser State untuk menyimpan nama panggilan/inisial anak, kelompok usia, dan progres belajar.",
+    "Sediakan data-testid di setiap tombol navigasi, opsi kuis, item piringku, dan form profil untuk kemudahan testing otomatis.",
+    "Gunakan ikon dari Lucide React (misal: Heart, Utensils, Smile, CheckCircle, HelpCircle, BookOpen, ChevronRight, Award, RefreshCw, AlertCircle).",
+    "Gunakan animasi halus menggunakan Framer Motion atau Tailwind CSS transitions untuk perpindahan halaman dan penambahan bahan makanan ke piring.",
+    "Pastikan evaluasi Susun Piringku memberikan umpan balik yang membangun (Yang Sudah Baik & Yang Masih Bisa Diperbaiki) berdasar panduan Kemenkes RI.",
+    "Sertakan Disclaimer resmi Kemenkes bahwa website ini adalah MEDIA EDUKASI INTERAKTIF, bukan aplikasi pemantauan medis atau diagnosis."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "design_purity": "Gunakan skema warna pastel lembut (pink, lavender, kuning cerah, biru langit). Hindari gradient hitam pekat atau tampilan korporat dingin.",
+    "responsiveness": "Tampilan harus mobile-first friendly dengan tombol berukuran besar (min-height 48px) yang mudah ditekan pada layar HP orang tua.",
+    "testing_readiness": "Seluruh elemen tombol, input, dan card harus memiliki atribut data-testid dengan format kebab-case (contoh: data-testid='start-learning-button')."
+  }
+}

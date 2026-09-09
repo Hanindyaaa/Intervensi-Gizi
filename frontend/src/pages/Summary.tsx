@@ -1,0 +1,14 @@
+import { ArrowLeft, BookOpen, Heart, Home, RotateCcw, Utensils } from "lucide-react";
+import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
+import { PageFrame, PageIntro } from "@/components/AppShell";
+import { useSession } from "@/lib/learningSession";
+
+const reminders = ["Berikan makanan yang beragam.", "Sertakan sumber protein, terutama protein hewani.", "Biasakan sayur dan buah dengan cara yang menyenangkan.", "Pilih camilan yang lebih beragam dan bergizi.", "Ciptakan suasana makan yang hangat tanpa memaksa."];
+
+export default function Summary() {
+  const { profile } = useSession();
+  return <PageFrame backTo="/higiene" current={5} total={5}><PageIntro eyebrow="Langkah terakhir · Bawa pulang" title="5 Hal Penting yang Perlu Diingat 💕" description={profile ? `Terima kasih sudah belajar bersama untuk ${profile.nickname}.` : "Terima kasih sudah belajar bersama. Simpan lima pengingat ini untuk menemani waktu makan."} /><section className="mx-auto max-w-3xl rounded-[2rem] border border-pink-100 bg-white p-6 shadow-[0_10px_40px_rgba(244,114,182,.1)] sm:p-8" data-testid="summary-card"><div className="space-y-3">{reminders.map((item, index) => <div key={item} className="flex items-center gap-4 rounded-2xl bg-[#fff7fa] p-4" data-testid={`summary-reminder-${index + 1}`}><span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-pink-100 font-heading text-lg font-extrabold text-pink-700">{index + 1}</span><p className="text-sm font-bold leading-relaxed text-slate-700">{item}</p></div>)}</div><div className="mt-7 flex items-start gap-3 rounded-2xl bg-yellow-50 p-4 text-sm leading-relaxed text-yellow-900" data-testid="summary-encouragement"><Heart className="mt-0.5 size-5 shrink-0 fill-yellow-200" /><p>Setiap keluarga punya ritme berbeda. Pilih satu hal kecil untuk dicoba hari ini.</p></div></section><div className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-3"><SummaryLink to="/belajar" icon={<BookOpen />} label="Ulangi Materi" testId="summary-repeat-button" /><SummaryLink to="/piringku" icon={<Utensils />} label="Coba Susun Piring Lagi" testId="summary-plate-button" /><SummaryLink to="/" icon={<Home />} label="Kembali ke Beranda" testId="summary-home-button" /></div><Link to="/referensi" className="mx-auto mt-8 block max-w-3xl text-center text-sm font-extrabold text-pink-600 hover:text-pink-700" data-testid="summary-references-link">Baca referensi dan disclaimer →</Link></PageFrame>;
+}
+
+function SummaryLink({ to, icon, label, testId }: { to: string; icon: ReactNode; label: string; testId: string }) { return <Link to={to} className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-3xl border border-slate-100 bg-white p-4 text-center text-sm font-extrabold text-slate-700 shadow-sm transition hover:-translate-y-1 hover:border-pink-200 hover:text-pink-600" data-testid={testId}>{icon}<span>{label}</span></Link> }
