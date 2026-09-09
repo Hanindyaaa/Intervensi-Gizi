@@ -27,3 +27,5 @@ Content uses general educational guidance and official Kemenkes/BPK references. 
 - Website labels map 12–23 months to the nearest official 1–3 years group, 2–3 years to 1–3 years, and 4–5 years to 4–6 years. The mapping is explicitly disclosed and is not individualized.
 - User-provided nutrition and progress infographics are shown responsively in the first learning module and summary.
 - The generated hero asset with a checkerboard background was removed; the homepage uses a clean CSS/emoji plate illustration instead.
+- Homepage hero plate (`HeroPlate` in `pages/Home.tsx`) cycles through 4 food sets every 4s with a pop animation (`animate-food-swap`), shows a caption + dot indicator; the interval is skipped when `prefers-reduced-motion` is set.
+- `/referensi` AKG card has a nutrient search box (`akg-search-input`): filters Tabel 1–3 rows by name (case-insensitive), highlights the match, auto-opens matching sections, hides sections with no match, shows a match count/status line and a clear button. Empty query restores the default view (macro open, others collapsed).
