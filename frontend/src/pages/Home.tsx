@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { PageFrame } from "@/components/AppShell";
 import { useSession } from "@/lib/learningSession";
 
-const heroImage = "https://static.prod-images.emergentagent.com/jobs/79007539-9e74-4b86-87f9-c49e8ec9ab32/images/2047d7dcce67ac04e649a05a18d7b5cdf1f752cce9b19f66532d482c323e8d99.jpeg";
-
 export default function Home() {
   const { profile } = useSession();
   const navigate = useNavigate();
@@ -22,7 +20,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button onClick={() => navigate("/mulai-profil")} className="min-h-12 rounded-2xl bg-pink-500 px-5 font-bold shadow-md hover:bg-pink-600" data-testid="start-learning-button">Mulai Belajar <ArrowRight className="ml-2 size-4" /></Button><a href="#kenapa" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-pink-200 bg-white/70 px-5 font-bold text-pink-700 hover:bg-white" data-testid="why-education-button">Kenapa edukasi ini penting?</a></div>
           {profile && <p className="mt-4 text-sm font-bold text-pink-600" data-testid="profile-welcome-note">Hai, {profile.nickname}! Siap melanjutkan belajar?</p>}
         </div>
-        <div className="relative flex min-h-[280px] items-center justify-center lg:min-h-[360px]"><div className="absolute size-56 rounded-full bg-white/70 sm:size-72" /><img src={heroImage} alt="Ilustrasi balita ceria menikmati piring makanan beragam" className="relative z-10 w-full max-w-[360px] object-contain mix-blend-multiply animate-gentle-float" data-testid="hero-illustration" /><span className="absolute right-0 top-5 z-20 rounded-2xl bg-white px-3 py-2 text-2xl shadow-sm">🥕</span><span className="absolute bottom-5 left-2 z-20 rounded-2xl bg-white px-3 py-2 text-2xl shadow-sm">🍌</span></div>
+        <div className="relative flex min-h-[280px] items-center justify-center lg:min-h-[360px]" data-testid="hero-illustration"><div className="absolute size-56 rounded-full bg-white/70 sm:size-72" /><div className="relative z-10 animate-gentle-float"><div className="grid size-44 place-items-center rounded-full border-[14px] border-white bg-[#fffdf6] text-7xl shadow-[0_16px_0_#fbcfe8,0_24px_45px_rgba(244,114,182,.18)] sm:size-56 sm:text-8xl">🍚🥚<br />🥦🍌</div><div className="mx-auto mt-4 w-fit rounded-full bg-white px-4 py-2 text-sm font-extrabold text-pink-700 shadow-sm">Piring beragam, hati senang 💕</div></div><span className="absolute right-0 top-5 z-20 rounded-2xl bg-white px-3 py-2 text-2xl shadow-sm">🥕</span><span className="absolute bottom-5 left-2 z-20 rounded-2xl bg-white px-3 py-2 text-2xl shadow-sm">🍌</span></div>
       </div>
     </section>
     <section id="kenapa" className="mt-14 grid gap-4 sm:grid-cols-3" data-testid="why-section"><InfoCard icon={<Heart className="size-5" />} title="Belajar tanpa menghakimi" text="Langkah kecil dan pilihan realistis untuk keluarga sehari-hari." tone="pink" /><InfoCard icon={<Utensils className="size-5" />} title="Coba langsung" text="Susun piring, tukar camilan, dan latih keputusan bersama." tone="purple" /><InfoCard icon={<ShieldCheck className="size-5" />} title="Media edukasi" text="Berbasis panduan resmi, bukan diagnosis atau pemantauan medis." tone="blue" /></section>

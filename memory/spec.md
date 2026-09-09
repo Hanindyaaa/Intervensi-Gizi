@@ -22,6 +22,8 @@ Content uses general educational guidance and official Kemenkes/BPK references. 
 
 ## Official AKG content
 - User-provided Permenkes No. 28 Tahun 2019 PDF is linked from `/referensi`.
-- The page summarizes Tabel 1, pages 6–7: 1–3 years = 1,350 kkal, 20 g protein, 45 g fat, 215 g carbohydrate; 4–6 years = 1,400 kkal, 25 g protein, 50 g fat, 220 g carbohydrate.
+- The page now contains three responsive, collapsible tables: Tabel 1 makro (energy, protein, fat, omega 3/6, carbohydrate, fiber, water), Tabel 2 vitamins, and Tabel 3 minerals for 1–3 and 4–6 years.
+- The page summarizes Tabel 1, pages 6–7: 1–3 years = 1,350 kkal, 20 g protein, 45 g fat, 215 g carbohydrate; 4–6 years = 1,400 kkal, 25 g protein, 50 g fat, 220 g carbohydrate, plus fiber and water.
 - Website labels map 12–23 months to the nearest official 1–3 years group, 2–3 years to 1–3 years, and 4–5 years to 4–6 years. The mapping is explicitly disclosed and is not individualized.
 - User-provided nutrition and progress infographics are shown responsively in the first learning module and summary.
+- The generated hero asset with a checkerboard background was removed; the homepage uses a clean CSS/emoji plate illustration instead.

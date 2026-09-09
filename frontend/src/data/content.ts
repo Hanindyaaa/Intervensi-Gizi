@@ -41,6 +41,14 @@ export interface AkgReferenceRow {
   carbohydrate: string;
 }
 
+export interface AkgNutrientRow {
+  name: string;
+  unit: string;
+  age13: string;
+  age46: string;
+  note?: string;
+}
+
 export const ageLabels: Record<AgeGroup, string> = {
   "12-23": "12–23 bulan",
   "2-3": "2–3 tahun",
@@ -280,8 +288,53 @@ export const akgReferenceRows: AkgReferenceRow[] = [
   { websiteAge: "4–5 tahun", officialGroup: "4–6 tahun", energy: "1.400 kkal", protein: "25 g", fat: "50 g", carbohydrate: "220 g" },
 ];
 
+export const akgMacroRows: AkgNutrientRow[] = [
+  { name: "Energi", unit: "kkal", age13: "1.350", age46: "1.400" },
+  { name: "Protein", unit: "g", age13: "20", age46: "25" },
+  { name: "Lemak total", unit: "g", age13: "45", age46: "50" },
+  { name: "Omega 3", unit: "g", age13: "0,7", age46: "0,9" },
+  { name: "Omega 6", unit: "g", age13: "7", age46: "10" },
+  { name: "Karbohidrat", unit: "g", age13: "215", age46: "220" },
+  { name: "Serat", unit: "g", age13: "19", age46: "20" },
+  { name: "Air", unit: "ml", age13: "1.150", age46: "1.450" },
+];
+
+export const akgVitaminRows: AkgNutrientRow[] = [
+  { name: "Vitamin A", unit: "RE", age13: "400", age46: "450" },
+  { name: "Vitamin D", unit: "mcg", age13: "15", age46: "15" },
+  { name: "Vitamin E", unit: "mg", age13: "6", age46: "7" },
+  { name: "Vitamin K", unit: "mcg", age13: "15", age46: "20" },
+  { name: "Vitamin B1", unit: "mg", age13: "0,5", age46: "0,6" },
+  { name: "Vitamin B2", unit: "mg", age13: "0,5", age46: "0,6" },
+  { name: "Vitamin B3", unit: "mg", age13: "6", age46: "8" },
+  { name: "Vitamin B5 (Pantotenat)", unit: "mg", age13: "2,0", age46: "3,0" },
+  { name: "Vitamin B6", unit: "mg", age13: "0,5", age46: "0,6" },
+  { name: "Folat", unit: "mcg", age13: "160", age46: "200" },
+  { name: "Vitamin B12", unit: "mcg", age13: "1,5", age46: "1,5" },
+  { name: "Biotin", unit: "mcg", age13: "8", age46: "12" },
+  { name: "Kolin", unit: "mg", age13: "200", age46: "250" },
+  { name: "Vitamin C", unit: "mg", age13: "40", age46: "45" },
+];
+
+export const akgMineralRows: AkgNutrientRow[] = [
+  { name: "Kalsium", unit: "mg", age13: "650", age46: "1.000" },
+  { name: "Fosfor", unit: "mg", age13: "460", age46: "500" },
+  { name: "Magnesium", unit: "mg", age13: "65", age46: "95" },
+  { name: "Besi", unit: "mg", age13: "7", age46: "10", note: "Catatan kaki 2" },
+  { name: "Iodium", unit: "mcg", age13: "90", age46: "120" },
+  { name: "Seng", unit: "mg", age13: "3", age46: "5", note: "Catatan kaki 3" },
+  { name: "Selenium", unit: "mcg", age13: "18", age46: "21" },
+  { name: "Mangan", unit: "mg", age13: "1,2", age46: "1,5" },
+  { name: "Kromium", unit: "mcg", age13: "14", age46: "16" },
+  { name: "Fluor", unit: "mg", age13: "0,7", age46: "1,0" },
+  { name: "Kalium", unit: "mg", age13: "2.600", age46: "2.700" },
+  { name: "Natrium", unit: "mg", age13: "800", age46: "900" },
+  { name: "Klorida", unit: "mg", age13: "1.200", age46: "1.300" },
+  { name: "Tembaga", unit: "mcg", age13: "340", age46: "440" },
+];
+
 export const references = [
   { title: "Isi Piringku", institution: "Kementerian Kesehatan Republik Indonesia", year: "Diakses 2025", url: "https://ayosehat.kemkes.go.id/isi-piringku" },
   { title: "Pedoman Gizi Seimbang", institution: "Kementerian Kesehatan Republik Indonesia", year: "Pedoman resmi", url: "https://ayosehat.kemkes.go.id/pedoman-gizi-seimbang" },
-  { title: "Permenkes Nomor 28 Tahun 2019 tentang Angka Kecukupan Gizi", institution: "Kementerian Kesehatan Republik Indonesia", year: "2019 · halaman 6–7", url: "https://customer-assets-39nsmqrw.emergentagent.net/job_balita-belajar-gizi/artifacts/s5imed31_PMK_No__28_Th_2019_ttg_Angka_Kecukupan_Gizi_Yang_D_250421_155247.pdf" },
+  { title: "Permenkes Nomor 28 Tahun 2019 tentang Angka Kecukupan Gizi", institution: "Kementerian Kesehatan Republik Indonesia", year: "2019 · halaman 6–14", url: "https://customer-assets-39nsmqrw.emergentagent.net/job_balita-belajar-gizi/artifacts/qqvff0mw_PMK_No__28_Th_2019_ttg_Angka_Kecukupan_Gizi_Yang_D_250421_155247.pdf" },
 ];
