@@ -7,9 +7,13 @@ hanya sisa template dan **tidak diperlukan** untuk menjalankan website.
 
 ## Build lokal
 
+Gunakan **Node 24 LTS** (lihat `.nvmrc`; `nvm use` akan memilihnya otomatis).
+`package-lock.json` sudah tersedia dan sinkron dengan `package.json`, sehingga
+gunakan `npm ci` (instalasi persis sesuai lockfile, bebas bug npm `edgesOut`).
+
 ```bash
 cd frontend
-npm install
+npm ci               # atau: npm install (hanya jika ingin memperbarui lockfile)
 npm run build        # hasil: frontend/dist/
 npm run preview      # cek hasil build di http://localhost:4173
 ```

@@ -1,0 +1,46 @@
+{
+  "passed": 5,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "No application code was modified per instructions; verification is a local reproduction of CI steps (no actual GitHub Actions run possible from this environment)."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "package-lock.json exists and is in sync with package.json",
+      "name": "npm-ci-clean-room",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "In /tmp/ci-check (only package.json + package-lock.json copied from /app/frontend), `npm ci --no-audit --no-fund` exited 0 with 'added 449 packages in 11s', no 'edgesOut' error; verified lockfileVersion=3 and node_modules/@emergentbase/overlay and node_modules/@emergentbase/visual-edits present after install."
+    },
+    {
+      "criterion": "Clean-room production build succeeds like CI",
+      "name": "clean-room-build",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Copied src, public, index.html, vite.config.ts, tsconfig*.json, components.json into /tmp/ci-check; `VITE_BASE_PATH=/Intervensi-Gizi/ DISABLE_VISUAL_EDITS=true DISABLE_EMERGENT_OVERLAY=true npm run build` exited 0 producing dist/index.html, dist/404.html, dist/_redirects, dist/.nojekyll, dist/assets/index-*.js; grep on index.html confirmed script src '/Intervensi-Gizi/assets/index-KvaLDaef.js'."
+    },
+    {
+      "criterion": "Workflow file is valid and uses npm ci with lockfile-aware Node setup",
+      "name": "workflow-yaml-validation",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "python3 yaml.safe_load on .github/workflows/deploy-pages.yml parsed without error; build job steps confirmed: actions/checkout@v4, actions/setup-node@v4, run 'npm ci --no-audit --no-fund', run 'npm run build', actions/upload-pages-artifact@v3 with path frontend/dist (viewed in file); frontend/.nvmrc contains '24'."
+    },
+    {
+      "criterion": "Built static site works under sub-path without backend",
+      "name": "static-build-subpath-navigation",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Served /tmp/ci-check/dist under /Intervensi-Gizi/ via a Python http.server subclass falling back to 404.html on port 8099. Loaded /Intervensi-Gizi/, clicked start-learning-button, reached /Intervensi-Gizi/mulai-profil; hard navigation to /Intervensi-Gizi/kuis rendered quiz content (body text >20 chars). Zero /api requests recorded and zero console errors."
+    },
+    {
+      "criterion": "Existing site unchanged on preview",
+      "name": "preview-site-unchanged",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "https://balita-belajar-gizi.preview.emergentagent.com/ loaded hero title 'Yuk, Kenali Makanan Bergizi untuk Si Kecil!' with no console errors; /referensi showed AKG search input (data-testid akg-search-input) visible."
+    }
+  ]
+}
