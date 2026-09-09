@@ -1,0 +1,67 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend lane not applicable: acceptance matrix specifies React session state only and no API/database behavior; pytest exited 5 because no tests are defined. /api/health is also not implemented (404), but no app flow calls it."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Profil dan alur belajar tetap berjalan tanpa data sensitif",
+      "name": "profile-and-learning-flow",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Profile form accepted optional nickname and 2–3 tahun; empty-age validation displayed; /belajar rendered exactly 10 module cards."
+    },
+    {
+      "criterion": "Detail materi gizi menampilkan infografik pengguna dengan benar",
+      "name": "nutrition-infographic-mobile",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Nutrition infographic rendered on 390px viewport with alt text covering carbohydrate, animal/plant protein, vegetables, fruit, fat, and water; no page horizontal overflow."
+    },
+    {
+      "criterion": "Referensi menampilkan tabel AKG resmi sebagai acuan kelompok",
+      "name": "references-akg-responsive",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "References rendered 3 AKG rows, values 1.350/1.400 kkal, 20/25 g protein, 45/50 g fat, 215/220 g carbohydrate, mapping note, PDF link, and non-individual disclaimer."
+    },
+    {
+      "criterion": "Layout referensi responsif di desktop dan mobile",
+      "name": "reference-desktop-layout",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Desktop reference list and AKG card were visible with mapping note and no document horizontal overflow; mobile responsive assertions passed in references-akg-responsive."
+    },
+    {
+      "criterion": "Susun Piringku dan Switch Camilan tetap berfungsi",
+      "name": "plate-and-snack-interactions",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Empty plate validation displayed; food selections evaluated non-diagnostically, reset cleared selections; snack try choice showed positive feedback and next example advanced."
+    },
+    {
+      "criterion": "Kuis, skenario, dan checklist higiene tetap berfungsi",
+      "name": "quiz-scenario-hygiene-flow",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "8 quiz answers produced feedback and completion score; scenario option produced discussion; all 5 hygiene checks produced completion message."
+    },
+    {
+      "criterion": "Ringkasan menampilkan infografik progres dan lima pengingat",
+      "name": "summary-progress-reminders",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Progress infographic with badge alt text, exactly 5 reminders, primary home CTA, and references link rendered."
+    },
+    {
+      "criterion": "Tidak ada error runtime atau masalah akses dasar pada route utama",
+      "name": "main-routes-no-overflow",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Home plus /belajar, /piringku, /camilan, /kuis, /skenario, /higiene, /ringkasan, and /referensi opened with main content visible at mobile width and no horizontal overflow."
+    }
+  ]
+}

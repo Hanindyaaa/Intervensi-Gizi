@@ -32,6 +32,15 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface AkgReferenceRow {
+  websiteAge: string;
+  officialGroup: string;
+  energy: string;
+  protein: string;
+  fat: string;
+  carbohydrate: string;
+}
+
 export const ageLabels: Record<AgeGroup, string> = {
   "12-23": "12–23 bulan",
   "2-3": "2–3 tahun",
@@ -260,8 +269,19 @@ export const quizQuestions: QuizQuestion[] = [
   { question: "Bagaimana cara memulai porsi makan anak?", choices: ["Selalu porsi sangat besar", "Porsi kecil lalu tambah bila masih lapar", "Tidak perlu jadwal", "Hanya memberi camilan"], answer: 1, explanation: "Porsi kecil dapat terasa lebih ramah dan bisa ditambah sesuai respons anak." },
 ];
 
+export const uploadedInfographics = {
+  nutrition: "https://customer-assets-39nsmqrw.emergentagent.net/job_balita-belajar-gizi/artifacts/gav53o90_ChatGPT%20Image%20Sep%2010%2C%202026%2C%2012_21_10%20AM.png",
+  progress: "https://customer-assets-39nsmqrw.emergentagent.net/job_balita-belajar-gizi/artifacts/434qn93d_ChatGPT%20Image%20Sep%2010%2C%202026%2C%2012_21_59%20AM.png",
+};
+
+export const akgReferenceRows: AkgReferenceRow[] = [
+  { websiteAge: "12–23 bulan", officialGroup: "1–3 tahun (acuan terdekat)", energy: "1.350 kkal", protein: "20 g", fat: "45 g", carbohydrate: "215 g" },
+  { websiteAge: "2–3 tahun", officialGroup: "1–3 tahun", energy: "1.350 kkal", protein: "20 g", fat: "45 g", carbohydrate: "215 g" },
+  { websiteAge: "4–5 tahun", officialGroup: "4–6 tahun", energy: "1.400 kkal", protein: "25 g", fat: "50 g", carbohydrate: "220 g" },
+];
+
 export const references = [
   { title: "Isi Piringku", institution: "Kementerian Kesehatan Republik Indonesia", year: "Diakses 2025", url: "https://ayosehat.kemkes.go.id/isi-piringku" },
   { title: "Pedoman Gizi Seimbang", institution: "Kementerian Kesehatan Republik Indonesia", year: "Pedoman resmi", url: "https://ayosehat.kemkes.go.id/pedoman-gizi-seimbang" },
-  { title: "Permenkes Nomor 28 Tahun 2019 tentang Angka Kecukupan Gizi", institution: "Kementerian Kesehatan Republik Indonesia", year: "2019", url: "https://peraturan.bpk.go.id/Details/138584/permenkes-no-28-tahun-2019" },
+  { title: "Permenkes Nomor 28 Tahun 2019 tentang Angka Kecukupan Gizi", institution: "Kementerian Kesehatan Republik Indonesia", year: "2019 · halaman 6–7", url: "https://customer-assets-39nsmqrw.emergentagent.net/job_balita-belajar-gizi/artifacts/s5imed31_PMK_No__28_Th_2019_ttg_Angka_Kecukupan_Gizi_Yang_D_250421_155247.pdf" },
 ];
