@@ -1,8 +1,38 @@
 import path from "node:path";
-import { defineConfig, type UserConfig } from "vite";
+import { copyFileSync, existsSync } from "node:fs";
+import { defineConfig, type Plugin, type UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { visualEdits } from "@emergentbase/visual-edits/vite";
+
+// Static hosting: the public path the built site is served from. "/" for a root
+// domain (Netlify, Vercel, user.github.io), "/<repo>/" for a GitHub Pages project site.
+//   VITE_BASE_PATH=/balita-belajar-gizi/ npm run build
+const staticBasePath = process.env.VITE_BASE_PATH?.trim() || "/";
+
+// After `vite build`, duplicate index.html as 404.html so GitHub Pages serves the SPA
+// for deep links such as /kuis or /materi/protein-hewani on a hard refresh.
+function spaFallback(): Plugin {
+  return {
+    name: "spa-fallback-404",
+    apply: "build",
+    closeBundle() {
+      const index = path.resolve(__dirname, "dist/index.html");
+      if (existsSync(index)) copyFileSync(index, path.resolve(__dirname, "dist/404.html"));
+    },
+  };
+}
+
+// Emergent dev-only helper (JSX tagging + /edit-file endpoint). Fails open: when the
+// package is absent (e.g. a plain `npm install` on another machine), the site builds without it.
+async function loadVisualEdits() {
+  try {
+    const mod = await import("@emergentbase/visual-edits/vite");
+    return mod.visualEdits();
+  } catch (e) {
+    console.warn("[visual-edits] plugin unavailable; continuing without it:", e instanceof Error ? e.message : e);
+    return null;
+  }
+}
 
 // Supervisor exports DISABLE_HOT_RELOAD=true when the platform sets ENABLE_RELOAD=false.
 const hotReloadDisabled = process.env.DISABLE_HOT_RELOAD === "true";
@@ -36,11 +66,14 @@ if (!hotReloadDisabled) {
 // https://vite.dev/config/
 export default defineConfig(async () => {
   const emergentOverlay = await loadEmergentOverlay();
+  const visualEditsPlugin = visualEditsDisabled ? null : await loadVisualEdits();
   return {
+    base: staticBasePath,
     plugins: [
       react(),
       tailwindcss(),
-      ...(visualEditsDisabled ? [] : [visualEdits()]),
+      spaFallback(),
+      ...(visualEditsPlugin ? [visualEditsPlugin] : []),
       ...(emergentOverlay ? [emergentOverlay] : []),
     ],
     resolve: {
